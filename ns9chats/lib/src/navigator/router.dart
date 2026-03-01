@@ -1,4 +1,5 @@
 import 'package:ns9chats/src/appstate/app_state.dart';
+import 'package:ns9chats/src/chat_window/chat_window.dart';
 import 'package:ns9chats/src/page/myapp.dart';
 import 'package:ns9chats/src/page/myappbar.dart';
 import 'package:go_router/go_router.dart';
@@ -41,6 +42,11 @@ GoRouter createRouter (AppState appState){
             path: '/home',
             name: 'home',
             builder: (context, state) => const MyApp(),
+          ),
+          GoRoute(
+            path: '/chat',
+            name: 'chat',
+            builder: (context, state) => const MyChat(),
           ),
           GoRoute(
             path: '/search',

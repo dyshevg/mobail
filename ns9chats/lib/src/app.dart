@@ -24,7 +24,7 @@ class _AppState extends State<App> {
       theme: ThemeData(
         colorScheme: ColorScheme
           .fromSeed(
-            seedColor: Colors.blueGrey,
+            seedColor: Colors.grey.shade200,
             brightness: Brightness.light
           ),
       ),
@@ -32,11 +32,11 @@ class _AppState extends State<App> {
         brightness: Brightness.dark,
         colorScheme: ColorScheme
           .fromSeed(
-            seedColor: Colors.blueGrey,
+            seedColor: Colors.grey.shade600,
             brightness: Brightness.dark
           ),
       ),
-      themeMode: ThemeMode.dark,
+      themeMode: ThemeMode.system,
       routerConfig: router,
     );
   }

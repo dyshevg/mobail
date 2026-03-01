@@ -27,11 +27,11 @@ class ChatsList extends StatelessWidget {
   Widget build(BuildContext context) {
    return ListTile(
     onTap: () {
-      context.push('/home/chat');
+      context.push('/chat');
       onChat (chats);
     },
     leading: CircleAvatar(
-        backgroundColor: Colors.blueGrey,
+        backgroundColor: Colors.amber,
         child: Text(chats.name[0]
         ),
     ),
@@ -42,7 +42,7 @@ class ChatsList extends StatelessWidget {
 
 TextStyle? _getTextStyle(BuildContext context) {
     return const TextStyle(
-      color: Colors.white,
+      color: Colors.amber,
     );
   }
 
@@ -87,7 +87,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme
           .fromSeed(
-            seedColor: Colors.blueGrey,
+            seedColor: Colors.white70,
             brightness: Brightness.light
           ),
       ),
@@ -95,11 +95,11 @@ class MyApp extends StatelessWidget {
         brightness: Brightness.dark,
         colorScheme: ColorScheme
           .fromSeed(
-            seedColor: Colors.blueGrey,
+            seedColor: Colors.grey.shade600,
             brightness: Brightness.dark
           ),
       ),
-      themeMode: ThemeMode.dark,
+      themeMode: ThemeMode.system,
       home: const ChatingList(chats: [
         Chat(name: 'Дами'),
         Chat(name: 'Костя'),

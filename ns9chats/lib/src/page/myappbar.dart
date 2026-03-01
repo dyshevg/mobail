@@ -14,11 +14,10 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget{
                   const SizedBox(width: 10),
                   const Text(
                     "NS9 Chats",
-                    style: TextStyle(fontSize: 34, color: Colors.white),
+                    style: TextStyle(fontSize: 34, color: Colors.amber),
                   ),
                 ],
               ),
-              backgroundColor: Colors.blueGrey,
               centerTitle: false,
             ); 
     }

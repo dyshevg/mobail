@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:ns9chats/src/page/myappbar.dart';
 // import 'package:flutter/scheduler.dart';
 
 
@@ -10,22 +11,6 @@ class MyChat extends StatelessWidget{
     Widget build(BuildContext context){
       return MaterialApp(
          home: Scaffold(
-          appBar: AppBar(
-            title: Row(
-              children: [
-                IconButton(
-                  onPressed: () {Navigator.pop(context);}, 
-                  icon: const Icon( Icons.arrow_back_outlined, ),
-                  ),
-                const Text(
-                  "Чат №2",
-                  style: TextStyle(fontSize: 34, color: Colors.white),
-                ),
-              ],
-            ),
-            backgroundColor: Colors.amber,
-          ),
-
            body: Align(
             alignment: Alignment.bottomCenter,
             child: Padding(
