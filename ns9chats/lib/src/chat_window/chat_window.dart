@@ -10,7 +10,27 @@ class MyChat extends StatelessWidget{
     @override
     Widget build(BuildContext context){
       return MaterialApp(
+          debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        colorScheme: ColorScheme
+          .fromSeed(
+            seedColor: Colors.grey.shade200,
+            brightness: Brightness.light
+          ),
+      ),
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+        colorScheme: ColorScheme
+          .fromSeed(
+            seedColor: Colors.grey.shade600,
+            brightness: Brightness.dark
+          ),
+      ),
+      themeMode: ThemeMode.system,
          home: Scaffold(
+          appBar: MyAppBar(
+            titleText: "Чат",
+          ),
            body: Align(
             alignment: Alignment.bottomCenter,
             child: Padding(

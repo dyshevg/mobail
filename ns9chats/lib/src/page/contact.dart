@@ -77,8 +77,8 @@ class _ChatingCard extends State<ChatingList> {
   }
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp ({super.key});
+class MyContact extends StatelessWidget {
+  const MyContact ({super.key});
   
   @override
   Widget build(BuildContext context) {
@@ -103,14 +103,13 @@ class MyApp extends StatelessWidget {
       
       home: Scaffold(
         appBar: MyAppBar(
-          titleText: "NS9 Chats",
-          titleImage: Image.asset("android/assets/images/ic_launcher.png", width:50, height: 50,),
+          titleText: "Контакты",
         ),
         body: const ChatingList(chats: [
-        Chat(name: 'Дами'),
-        Chat(name: 'Костя'),
+        Chat(name: 'Дами (Dami)'),
+        Chat(name: 'Костя (Дядясиси)'),
         Chat(name: 'Миша'),
-        Chat(name: 'Сергей'),
+        Chat(name: 'Сергей (Pro100Ser)'),
       ],),
       )
        
