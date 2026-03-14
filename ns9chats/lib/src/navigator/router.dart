@@ -37,6 +37,11 @@ GoRouter createRouter (AppState appState){
           },
         ),
       ),
+      GoRoute(
+            path: '/chat',
+            name: 'chat',
+            builder: (context, state) => const MyChat(),
+          ),
        ShellRoute(
         builder: (context, state, child) => TabsScaffold(child: child),
         routes: [
@@ -45,11 +50,7 @@ GoRouter createRouter (AppState appState){
             name: 'home',
             builder: (context, state) => const MyApp(),
           ),
-          GoRoute(
-            path: '/chat',
-            name: 'chat',
-            builder: (context, state) => const MyChat(),
-          ),
+          
           GoRoute(
             path: '/search',
             name: 'search',

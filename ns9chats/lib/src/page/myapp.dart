@@ -35,16 +35,12 @@ class ChatsList extends StatelessWidget {
         child: Text(chats.name[0]
         ),
     ),
-    title: Text(chats.name, style: _getTextStyle(context)),
+    title: Text(chats.name, style: Theme.of(context).textTheme.titleLarge),
    );
   }
 }
 
-TextStyle? _getTextStyle(BuildContext context) {
-    return const TextStyle(
-      color: Colors.amber,
-    );
-  }
+
 
 class ChatingList extends StatefulWidget {
   const ChatingList({required this.chats, super.key});

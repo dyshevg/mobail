@@ -1,5 +1,7 @@
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:ns9chats/src/navigator/router.dart';
 import 'package:ns9chats/src/page/myappbar.dart';
 // import 'package:flutter/scheduler.dart';
 
@@ -30,6 +32,13 @@ class MyChat extends StatelessWidget{
          home: Scaffold(
           appBar: MyAppBar(
             titleText: "Чат",
+            titleButtun: IconButton(
+              onPressed: () {
+               context.pop();
+            }, 
+            icon: const Icon(
+              Icons.arrow_back
+              )),
           ),
            body: Align(
             alignment: Alignment.bottomCenter,

@@ -30,21 +30,12 @@ class ChatsList extends StatelessWidget {
       context.push('/chat');
       onChat (chats);
     },
-    leading: CircleAvatar(
-        backgroundColor: Colors.amber,
-        child: Text(chats.name[0]
-        ),
-    ),
-    title: Text(chats.name, style: _getTextStyle(context)),
+    title: Text(chats.name, style: Theme.of(context).textTheme.titleLarge),
    );
   }
 }
 
-TextStyle? _getTextStyle(BuildContext context) {
-    return const TextStyle(
-      color: Colors.amber,
-    );
-  }
+
 
 class ChatingList extends StatefulWidget {
   const ChatingList({required this.chats, super.key});
@@ -64,14 +55,16 @@ class _ChatingCard extends State<ChatingList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(
-        padding: const EdgeInsets.symmetric(vertical: 8),
-        children: widget.chats.map((chats) {
-          return ChatsList(
-            chats: chats,
-            onChat: _handleChats,
-          );
-        }).toList(),
+      body: Card(
+        child: ListView(
+          padding: const EdgeInsets.symmetric(vertical: 8),
+          children: widget.chats.map((chats) {
+            return ChatsList(
+              chats: chats,
+              onChat: _handleChats,
+            );
+          }).toList(),
+        ),
       ),
     );
   }
@@ -110,6 +103,7 @@ class MyContact extends StatelessWidget {
         Chat(name: 'Костя (Дядясиси)'),
         Chat(name: 'Миша'),
         Chat(name: 'Сергей (Pro100Ser)'),
+         Chat(name: 'Жора (NQzepven35)'),
       ],),
       )
        

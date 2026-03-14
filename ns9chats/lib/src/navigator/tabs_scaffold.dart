@@ -36,10 +36,10 @@ class TabsScaffold extends StatelessWidget {
           }
         },
         destinations: const [
-          NavigationDestination(icon: Icon(Icons.home_outlined,color: Colors.amber,), selectedIcon: Icon(Icons.home, color: Colors.amber), label: ''),
-          NavigationDestination(icon: Icon(Icons.people_outline, color: Colors.amber), selectedIcon: Icon(Icons.people, color: Colors.amber), label: ''),
-          NavigationDestination(icon: Icon(Icons.settings_outlined, color: Colors.amber), selectedIcon: Icon(Icons.settings, color: Colors.amber), label: ''),
-          NavigationDestination(icon: Icon(Icons.person_outline, color: Colors.amber), selectedIcon: Icon(Icons.person, color: Colors.amber), label: ''),
+          NavigationDestination(icon: Icon(Icons.home_outlined), selectedIcon: Icon(Icons.home), label: ''),
+          NavigationDestination(icon: Icon(Icons.people_outline), selectedIcon: Icon(Icons.people), label: ''),
+          NavigationDestination(icon: Icon(Icons.settings_outlined), selectedIcon: Icon(Icons.settings), label: ''),
+          NavigationDestination(icon: Icon(Icons.person_outline), selectedIcon: Icon(Icons.person), label: ''),
         ],
       ),
     );
