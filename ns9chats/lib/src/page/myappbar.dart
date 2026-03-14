@@ -3,22 +3,30 @@ import "package:flutter/material.dart";
 
 
 class MyAppBar extends StatelessWidget implements PreferredSizeWidget{
-   const MyAppBar({super.key});
+  final String? titleText;
+  final Image? titleImage;
+  final IconButton? titleButtun;
+    MyAppBar({
+      super.key,
+      this.titleText,
+      this.titleImage,
+      this.titleButtun,
+      });
 
     @override
     Widget build(BuildContext context){
       return AppBar(
               title: Row(
                 children: [
-                  Image.asset("android/assets/images/ic_launcher.png", width: 50, height: 50,),
+                  titleButtun??
+                  titleImage??
                   const SizedBox(width: 10),
-                  const Text(
-                    "NS9 Chats",
-                    style: TextStyle(fontSize: 34, color: Colors.white),
+                    Text(
+                    titleText?? "NS9 Chats",
+                    style: Theme.of(context).textTheme.titleLarge
                   ),
                 ],
               ),
-              backgroundColor: Colors.blueGrey,
               centerTitle: false,
             ); 
     }

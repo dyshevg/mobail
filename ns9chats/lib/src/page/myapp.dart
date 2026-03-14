@@ -27,24 +27,20 @@ class ChatsList extends StatelessWidget {
   Widget build(BuildContext context) {
    return ListTile(
     onTap: () {
-      context.push('/home/chat');
+      context.push('/chat');
       onChat (chats);
     },
     leading: CircleAvatar(
-        backgroundColor: Colors.blueGrey,
+        backgroundColor: Colors.amber,
         child: Text(chats.name[0]
         ),
     ),
-    title: Text(chats.name, style: _getTextStyle(context)),
+    title: Text(chats.name, style: Theme.of(context).textTheme.titleLarge),
    );
   }
 }
 
-TextStyle? _getTextStyle(BuildContext context) {
-    return const TextStyle(
-      color: Colors.white,
-    );
-  }
+
 
 class ChatingList extends StatefulWidget {
   const ChatingList({required this.chats, super.key});
@@ -87,7 +83,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme
           .fromSeed(
-            seedColor: Colors.blueGrey,
+            seedColor: Colors.white70,
             brightness: Brightness.light
           ),
       ),
@@ -95,17 +91,25 @@ class MyApp extends StatelessWidget {
         brightness: Brightness.dark,
         colorScheme: ColorScheme
           .fromSeed(
-            seedColor: Colors.blueGrey,
+            seedColor: Colors.grey.shade600,
             brightness: Brightness.dark
           ),
       ),
-      themeMode: ThemeMode.dark,
-      home: const ChatingList(chats: [
+      themeMode: ThemeMode.system,
+      
+      home: Scaffold(
+        appBar: MyAppBar(
+          titleText: "NS9 Chats",
+          titleImage: Image.asset("android/assets/images/ic_launcher.png", width:50, height: 50,),
+        ),
+        body: const ChatingList(chats: [
         Chat(name: 'Дами'),
         Chat(name: 'Костя'),
         Chat(name: 'Миша'),
         Chat(name: 'Сергей'),
       ],),
+      )
+       
     );
   }
 

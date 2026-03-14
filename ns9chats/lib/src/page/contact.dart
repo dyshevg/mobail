@@ -1,0 +1,114 @@
+import 'package:go_router/go_router.dart';
+import 'package:ns9chats/src/page/myappbar.dart';
+
+import '../chat_window/chat_window.dart';
+import '../navigator/router.dart';
+import 'package:flutter/material.dart';
+
+
+class Chat {
+  const Chat({required this.name});
+
+  final String name;
+}
+
+typedef Chats = void Function(Chat chats);
+
+class ChatsList extends StatelessWidget {
+  ChatsList({
+    required this.chats,
+    required this.onChat,
+  }): super(key: ObjectKey(chats));
+
+  final Chat chats;
+  final Chats onChat;
+  
+  @override
+  Widget build(BuildContext context) {
+   return ListTile(
+    onTap: () {
+      context.push('/chat');
+      onChat (chats);
+    },
+    title: Text(chats.name, style: Theme.of(context).textTheme.titleLarge),
+   );
+  }
+}
+
+
+
+class ChatingList extends StatefulWidget {
+  const ChatingList({required this.chats, super.key});
+
+  final List<Chat> chats;
+
+  @override
+  State<ChatingList> createState() => _ChatingCard();
+}
+class _ChatingCard extends State<ChatingList> {
+  void _handleChats(Chat chats) {
+    setState(() {
+    
+    
+    });
+  }
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Card(
+        child: ListView(
+          padding: const EdgeInsets.symmetric(vertical: 8),
+          children: widget.chats.map((chats) {
+            return ChatsList(
+              chats: chats,
+              onChat: _handleChats,
+            );
+          }).toList(),
+        ),
+      ),
+    );
+  }
+}
+
+class MyContact extends StatelessWidget {
+  const MyContact ({super.key});
+  
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        colorScheme: ColorScheme
+          .fromSeed(
+            seedColor: Colors.white70,
+            brightness: Brightness.light
+          ),
+      ),
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+        colorScheme: ColorScheme
+          .fromSeed(
+            seedColor: Colors.grey.shade600,
+            brightness: Brightness.dark
+          ),
+      ),
+      themeMode: ThemeMode.system,
+      
+      home: Scaffold(
+        appBar: MyAppBar(
+          titleText: "Контакты",
+        ),
+        body: const ChatingList(chats: [
+        Chat(name: 'Дами (Dami)'),
+        Chat(name: 'Костя (Дядясиси)'),
+        Chat(name: 'Миша'),
+        Chat(name: 'Сергей (Pro100Ser)'),
+         Chat(name: 'Жора (NQzepven35)'),
+      ],),
+      )
+       
+    );
+  }
+
+  
+}

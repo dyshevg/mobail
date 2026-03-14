@@ -10,6 +10,7 @@ class TabsScaffold extends StatelessWidget {
   int _locationToIndex(String location) {
     if (location.startsWith('/search')) return 1;
     if (location.startsWith('/settings')) return 2;
+    if (location.startsWith('/profile')) return 3;
     return 0; // home (по умолчанию)
   }
 
@@ -19,7 +20,6 @@ class TabsScaffold extends StatelessWidget {
     final currentIndex = _locationToIndex(location);
 
     return Scaffold(
-      appBar: MyAppBar(),
       body: child,
       bottomNavigationBar: NavigationBar(
         selectedIndex: currentIndex,
@@ -31,12 +31,15 @@ class TabsScaffold extends StatelessWidget {
               context.go('/search');
             case 2:
               context.go('/settings');
+            case 3:
+              context.go('/profile');
           }
         },
         destinations: const [
-          NavigationDestination(icon: Icon(Icons.home_outlined), selectedIcon: Icon(Icons.home), label: 'Home'),
-          NavigationDestination(icon: Icon(Icons.search_outlined), selectedIcon: Icon(Icons.search), label: 'Search'),
-          NavigationDestination(icon: Icon(Icons.settings_outlined), selectedIcon: Icon(Icons.settings), label: 'Settings'),
+          NavigationDestination(icon: Icon(Icons.home_outlined), selectedIcon: Icon(Icons.home), label: ''),
+          NavigationDestination(icon: Icon(Icons.people_outline), selectedIcon: Icon(Icons.people), label: ''),
+          NavigationDestination(icon: Icon(Icons.settings_outlined), selectedIcon: Icon(Icons.settings), label: ''),
+          NavigationDestination(icon: Icon(Icons.person_outline), selectedIcon: Icon(Icons.person), label: ''),
         ],
       ),
     );
